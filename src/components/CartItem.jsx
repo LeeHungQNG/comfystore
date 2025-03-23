@@ -4,6 +4,7 @@ import { formatPrice, generateAmountOptions } from '../utils';
 
 const CartItem = ({ cartItem }) => {
   const dispatch = useDispatch();
+  const { cartID, title, price, image, amount, company, productColor } = cartItem;
 
   const removeItemFromTheCart = () => {
     dispatch(removeItem({ cartID }));
@@ -12,7 +13,6 @@ const CartItem = ({ cartItem }) => {
     dispatch(editItem({ cartID, amount: parseInt(e.target.value) }));
   };
 
-  const { cartID, title, price, image, amount, company, productColor } = cartItem;
   return (
     <article key={cartID} className="mb-12 flex flex-col gap-y-4 sm:flex-row flex-wrap border-b border-base-300 pb-6 last:border-b-0">
       {/* IMAGE */}
